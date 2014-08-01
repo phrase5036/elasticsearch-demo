@@ -6,7 +6,11 @@ class Article < ActiveRecord::Base
     indexes :body
   end
 
-  # def self.search(query)
-  #   # ...
-  # end
+  def self.query_string(search_type, search)
+    if search_type == 'title'
+      { :query => { :match => { :title => search } } }
+    elsif search_type == 'body'
+      { :query => { :match => { :body => search } } }
+    end
+  end
 end
