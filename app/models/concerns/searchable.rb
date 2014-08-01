@@ -8,8 +8,8 @@ module Searchable
       # ...
     end
 
-    def self.search(query)
-      # ...
-    end
+    # def self.search(query)
+    #   # ...
+    # end
   end
 end
